@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="AlunoAtividadeContext\**" />
+    <Compile Remove="AlunoContext\**" />
+    <Compile Remove="Aluno\**" />
+    <Compile Remove="AtividadeContext\**" />
+    <Compile Remove="CoordenadorContext\**" />
+    <Compile Remove="Coordenador\**" />
+    <Compile Remove="MateriaContext\**" />
+    <Compile Remove="NotaContext\**" />
+    <Compile Remove="Nota\**" />
+    <Compile Remove="ProfessorContext\**" />
+    <Compile Remove="ProfessorMateriaContext\**" />
+    <Compile Remove="Professor\**" />
+    <Compile Remove="TurmaContext\**" />
+    <Compile Remove="Turma\**" />
+    <Compile Remove="ValueObjects\**" />
+    <EmbeddedResource Remove="AlunoAtividadeContext\**" />
+    <EmbeddedResource Remove="AlunoContext\**" />
+    <EmbeddedResource Remove="Aluno\**" />
+    <EmbeddedResource Remove="AtividadeContext\**" />
+    <EmbeddedResource Remove="CoordenadorContext\**" />
+    <EmbeddedResource Remove="Coordenador\**" />
+    <EmbeddedResource Remove="MateriaContext\**" />
+    <EmbeddedResource Remove="NotaContext\**" />
+    <EmbeddedResource Remove="Nota\**" />
+    <EmbeddedResource Remove="ProfessorContext\**" />
+    <EmbeddedResource Remove="ProfessorMateriaContext\**" />
+    <EmbeddedResource Remove="Professor\**" />
+    <EmbeddedResource Remove="TurmaContext\**" />
+    <EmbeddedResource Remove="Turma\**" />
+    <EmbeddedResource Remove="ValueObjects\**" />
+    <None Remove="AlunoAtividadeContext\**" />
+    <None Remove="AlunoContext\**" />
+    <None Remove="Aluno\**" />
+    <None Remove="AtividadeContext\**" />
+    <None Remove="CoordenadorContext\**" />
+    <None Remove="Coordenador\**" />
+    <None Remove="MateriaContext\**" />
+    <None Remove="NotaContext\**" />
+    <None Remove="Nota\**" />
+    <None Remove="ProfessorContext\**" />
+    <None Remove="ProfessorMateriaContext\**" />
+    <None Remove="Professor\**" />
+    <None Remove="TurmaContext\**" />
+    <None Remove="Turma\**" />
+    <None Remove="ValueObjects\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+</Project>

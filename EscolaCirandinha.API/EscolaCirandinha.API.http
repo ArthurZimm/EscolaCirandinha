@@ -1,0 +1,6 @@
+@EscolaCirandinha.API_HostAddress = http://localhost:5073
+
+GET {{EscolaCirandinha.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
