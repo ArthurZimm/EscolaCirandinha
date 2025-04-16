@@ -18,12 +18,12 @@ namespace EscolaCirandinha.Domain.Entities
         [CustomValidation(typeof(Validation), nameof(Validation.ValidaForcaSenha))]
         public string Senha { get; private set; }
         public Turma Turma { get; private set; }
-        public List<AlunoAtividade> AlunoAtividades { get; private set; }
+        public ICollection<AlunoAtividade> AlunoAtividades { get; private set; }
         #endregion
 
         #region Construtor
         public Aluno(DadosPessoais dadosAluno, Endereco endereco, Responsavel responsavel,
-            string senha, Turma turma, List<AlunoAtividade> alunoAtividades) : base(Guid.NewGuid())
+            string senha, Turma turma, ICollection<AlunoAtividade> alunoAtividades) : base(Guid.NewGuid())
         {
             DadosAluno = dadosAluno;
             Endereco = endereco;

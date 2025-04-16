@@ -7,14 +7,15 @@ namespace EscolaCirandinha.Domain.Entities
         #region Propriedades
         public Guid ProfessorId { get; private set; }
         public Guid MateriaId { get; private set; }
-        public List<Atividade> Atividades { get; private set; }
+        public ICollection<Atividade> Atividades { get; private set; }
         #endregion
 
         #region Construtor
-        public ProfessorMateria(Guid professorId, Guid materiaId) : base(Guid.NewGuid())
+        public ProfessorMateria(Guid professorId, Guid materiaId, ICollection<Atividade> atividades) : base(Guid.NewGuid())
         {
             ProfessorId = professorId;
             MateriaId = materiaId;
+            Atividades = atividades;
         }
         #endregion
     }
