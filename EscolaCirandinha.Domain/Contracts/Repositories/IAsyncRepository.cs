@@ -1,4 +1,4 @@
-namespace EscolaCirandinha.Domain.Repositories;
+namespace EscolaCirandinha.Domain.Contracts.Repositories;
 
 public interface IAsyncRepository<T>
 {

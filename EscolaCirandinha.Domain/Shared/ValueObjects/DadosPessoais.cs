@@ -12,7 +12,7 @@ namespace EscolaCirandinha.Domain.Shared.ValueObjects
         public string Cpf { get; }
         [Required(ErrorMessage = "A data de nascimento é obrigatória.")]
         [CustomValidation(typeof(Validation), nameof(Validation.ValidaDataNascimento))]
-        public DateTime DataNascimento { get; }
+        public DateTime DataNascimento { get; private set; }
 
         public DadosPessoais(string nome, string cpf, DateTime dataNascimento)
         {

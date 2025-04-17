@@ -4,7 +4,6 @@ namespace EscolaCirandinha.Domain.Entities
 {
     public sealed class AlunoAtividade : Entity
     {
-
         #region Propriedades
         public Guid AlunoId { get; private set; }
         public Aluno Aluno { get; private set; }
