@@ -1,4 +1,4 @@
-using EscolaCirandinha.Domain.Entities;
+﻿using EscolaCirandinha.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -8,6 +8,14 @@ public class ProfessorMateriaConfiguration  : IEntityTypeConfiguration<Professor
 {
     public void Configure(EntityTypeBuilder<ProfessorMateria> builder)
     {
-        throw new NotImplementedException();
+        builder.HasKey(pm => pm.Id);
+
+        builder.HasOne(pm => pm.Professor)
+               .WithMany(p => p.ProfessorMaterias)
+               .HasForeignKey(pm => pm.ProfessorId);
+
+        builder.HasOne(pm => pm.Materia)
+               .WithMany(m => m.ProfessorMaterias)
+               .HasForeignKey(pm => pm.MateriaId);
     }
 }

@@ -8,6 +8,20 @@ public class AlunoAtividadeConfiguration : IEntityTypeConfiguration<AlunoAtivida
 {
     public void Configure(EntityTypeBuilder<AlunoAtividade> builder)
     {
-        throw new NotImplementedException();
+        builder.HasKey(aa => aa.Id);
+
+        builder.HasOne(aa => aa.Aluno)
+            .WithMany()
+            .HasForeignKey(aa => aa.AlunoId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        builder.HasOne(aa => aa.Atividade)
+            .WithMany()
+            .HasForeignKey(aa => aa.AtividadeId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        builder.Property(aa => aa.Nota)
+            .IsRequired()
+            .HasPrecision(5, 2);
     }
 }

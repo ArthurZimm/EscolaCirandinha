@@ -8,6 +8,14 @@ public class MateriaConfiguration  : IEntityTypeConfiguration<Materia>
 {
     public void Configure(EntityTypeBuilder<Materia> builder)
     {
-        throw new NotImplementedException();
+        builder.HasKey(m => m.Id);
+
+        builder.Property(m => m.Nome)
+            .IsRequired()
+            .HasMaxLength(100);
+
+        builder.HasMany(m => m.ProfessorMaterias)
+                .WithOne(pm => pm.Materia)
+                .HasForeignKey(pm => pm.MateriaId);
     }
 }

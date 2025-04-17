@@ -8,13 +8,17 @@ namespace EscolaCirandinha.Domain.Entities
     public sealed class Coordenador : Entity
     {
         #region Propriedades
-        public DadosPessoais DadosCoordenador { get; }
+        public DadosPessoais DadosCoordenador { get; private set; }
         [Required(ErrorMessage = "a senha é obrigatória.")]
         [CustomValidation(typeof(Validation), nameof(Validation.ValidaForcaSenha))]
         public string Senha { get; private set; }
         #endregion
 
         #region Construtor
+        public Coordenador() : base(Guid.NewGuid())
+        {
+            
+        }
         public Coordenador(DadosPessoais dadosCoordenador, string senha) : base(Guid.NewGuid())
         {
             DadosCoordenador = dadosCoordenador;

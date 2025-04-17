@@ -8,6 +8,24 @@ public class CoordenadorConfiguration  : IEntityTypeConfiguration<Coordenador>
 {
     public void Configure(EntityTypeBuilder<Coordenador> builder)
     {
-        throw new NotImplementedException();
+        builder.HasKey(c => c.Id);
+
+        builder.OwnsOne(a => a.DadosCoordenador, dados =>
+        {
+            dados.Property(d => d.Nome)
+                .IsRequired()
+                .HasMaxLength(100);
+
+            dados.Property(d => d.Cpf)
+                .IsRequired()
+                .HasMaxLength(11);
+
+            dados.Property(d => d.DataNascimento)
+                .IsRequired();
+        });
+
+        builder.Property(c => c.Senha)
+            .IsRequired()
+            .HasMaxLength(100);
     }
 }

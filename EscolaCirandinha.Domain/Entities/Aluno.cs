@@ -9,28 +9,33 @@ namespace EscolaCirandinha.Domain.Entities
     {
         #region Propriedades
         [Required(ErrorMessage = "Os dados pessoais são obrigatórios.")]
-        public DadosPessoais DadosAluno { get; }
+        public DadosPessoais DadosAluno { get; private set; }
         [Required(ErrorMessage = "O endereço é obrigatório.")]
         public Endereco Endereco { get; private set; }
         [Required(ErrorMessage = "O responsável é obrigatório.")]
-        public Responsavel Responsavel { get; }
+        public Responsavel Responsavel { get; private set; }
         [Required(ErrorMessage = "A senha é obrigatória.")]
         [CustomValidation(typeof(Validation), nameof(Validation.ValidaForcaSenha))]
         public string Senha { get; private set; }
+        public Guid TurmaId { get; private set; }
         public Turma Turma { get; private set; }
         public ICollection<AlunoAtividade> AlunoAtividades { get; private set; }
         #endregion
 
         #region Construtor
+        public Aluno() : base(Guid.NewGuid())
+        {
+            
+        }
         public Aluno(DadosPessoais dadosAluno, Endereco endereco, Responsavel responsavel,
-            string senha, Turma turma, ICollection<AlunoAtividade> alunoAtividades) : base(Guid.NewGuid())
+            string senha,Guid turmaId) : base(Guid.NewGuid())
         {
             DadosAluno = dadosAluno;
             Endereco = endereco;
             Responsavel = responsavel;
             Senha = senha;
-            Turma = turma;
-            AlunoAtividades = alunoAtividades;
+            TurmaId = turmaId;
+            AlunoAtividades = new List<AlunoAtividade>();
         }
         #endregion
 

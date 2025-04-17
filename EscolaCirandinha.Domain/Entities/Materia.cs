@@ -8,11 +8,18 @@ namespace EscolaCirandinha.Domain.Entities
         #region Propriedades
         [Required(ErrorMessage = "O nome da matéria é obrigatório.")]
         public string Nome { get; private set; }
+        public ICollection<ProfessorMateria> ProfessorMaterias { get; private set; }
+
         #endregion
         #region Construtor
-        public Materia(string nome) : base(Guid.NewGuid())
+        public Materia() : base(Guid.NewGuid())
+        {
+            
+        }
+        public Materia(string nome, ICollection<ProfessorMateria>professorMaterias) : base(Guid.NewGuid())
         {
             Nome = nome;
+            ProfessorMaterias = professorMaterias;
         }
         #endregion
         #region Métodos
