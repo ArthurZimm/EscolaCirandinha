@@ -10,6 +10,7 @@ namespace EscolaCirandinha.Domain.Entities
         #region Propriedades
         [Required(ErrorMessage = "Os dados pessoais são obrigatórios.")]
         public DadosPessoais DadosAluno { get; private set; }
+
         [Required(ErrorMessage = "O endereço é obrigatório.")]
         public Endereco Endereco { get; private set; }
         [Required(ErrorMessage = "O responsável é obrigatório.")]

@@ -7,12 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\Aluno\AtualizarAluno\" />
-    <Folder Include="Commands\Aluno\RemoverAluno\" />
     <Folder Include="Commands\Atividade\CriarAtividade\" />
     <Folder Include="Commands\Atividade\AtualizarAtividade\" />
     <Folder Include="Commands\Atividade\RemoverAtividade\" />
-    <Folder Include="Commands\Coordenador\CriarCoordenador\" />
     <Folder Include="Commands\Coordenador\AtualizarCoordenador\" />
     <Folder Include="Commands\Coordenador\RemoverCoordenador\" />
     <Folder Include="Commands\Professor\" />

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using EscolaCirandinha.Application.DTOs.Response;
 
 namespace EscolaCirandinha.Application.Mappings
 {
@@ -6,10 +7,16 @@ namespace EscolaCirandinha.Application.Mappings
     {
         public Mapping()
         {
-            CreateMap<Domain.Entities.Aluno, DTOs.AlunoDto>().ReverseMap();
-            CreateMap<Domain.Entities.Professor, DTOs.ProfessorDto>().ReverseMap();
-            CreateMap<Domain.Entities.Coordenador, DTOs.CoordenadorDto>().ReverseMap();
-            CreateMap<Domain.Entities.Atividade, DTOs.AtividadeDto>().ReverseMap();
+            //Mapeamento de entidades para response
+            CreateMap<Domain.Entities.Aluno, AlunoResponse>();
+            CreateMap<Domain.Entities.Professor, ProfessorResponse>();
+            CreateMap<Domain.Entities.Coordenador, CoordenadorResponse>();
+            CreateMap<Domain.Entities.Atividade, AtividadeResponse>();
+            CreateMap<Domain.Entities.Turma, TurmaResponse>();
+
+            //- Mapeamento de ValueObjects da response
+            CreateMap<Domain.Shared.ValueObjects.Endereco, EnderecoResponse>();
+            CreateMap<Domain.Shared.ValueObjects.DadosPessoais, DadosPessoaisResponse>();
         }
     }
 }

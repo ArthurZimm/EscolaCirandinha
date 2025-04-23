@@ -2,9 +2,9 @@
 using EscolaCirandinha.Domain.Shared.ValueObjects;
 using MediatR;
 
-namespace EscolaCirandinha.Application.Commands.Aluno.CriarAluno
+namespace EscolaCirandinha.Application.Commands.Aluno.RemoverAluno
 {
-    public class CriarAlunoCommand : IRequest<AlunoResponse>
+    public class RemoveAlunoCommand : IRequest<AlunoResponse>
     {
         public DadosPessoais DadosAluno { get; set; }
         public Endereco Endereco { get; set; }

@@ -3,12 +3,8 @@ using MediatR;
 
 namespace EscolaCirandinha.Application.Queries.Aluno.ObterAluno
 {
-    public class ObterAlunoIdQuery : IRequest<AlunoResponse>
+    public class ObterAlunosTurmaQuery : IRequest<IEnumerable<AlunoResponse>>
     {
         public Guid Id { get; set; }
-        public ObterAlunoIdQuery(Guid id)
-        {
-            Id = id;
-        }
     }
 }
